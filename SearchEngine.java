@@ -10,7 +10,7 @@ class Handler implements URLHandler {
 
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
-            return String.format("Welcome to my Search Engine \t To add to the engine do '/add?= then what you would want to add'");
+            return String.format("Welcome to my Search Engine \n To add to the engine do '/add?=' then what you would want to add \n To Search type '/search?=' then what you want to search");
         }
         else if(url.getPath().contains("/add"))
         {
@@ -26,8 +26,7 @@ class Handler implements URLHandler {
             {
                 if(words.get(x).contains(parameters[1]))
                 {
-                    s += words.get(x);
-                    s += " : ";
+                    s += words.get(x) + "\n";
                 }
             }
             if(s.equals(""))
